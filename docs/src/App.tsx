@@ -1,7 +1,16 @@
+import { Div } from '../../fancy-ui-react/index'
+import { Modal } from '../../fancy-ui-react/index'
+
 export function App() {
   return (
     <div className="app">
-      <h1>Docs</h1>
+      <Div p={'20px'} mTop={'120px'} justify={'center'} direction={'row-reverse'} >
+        <p>hello, world!</p>
+        <p>hello, world!</p>
+      </Div>
+      <Div mTop={'120px'} justify={'center'} >
+        Hello, World!
+      </Div>
     </div>
   );
 }
