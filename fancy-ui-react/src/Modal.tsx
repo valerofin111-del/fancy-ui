@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { useState } from 'react'
 
 interface ModalTypes {
@@ -37,16 +37,21 @@ export var Modal = ( { children, trigger, close, side = 'bottom', id, className 
     }
 
     return (
-            <div id={id} className={className} 
+            <div id={id} className={className} tabIndex={0}
                 style={{display: 'flex', flexDirection: direction }}
             >
-                <div onClick={() => setIsOpen(prev => !prev)}                 > 
+                <div onClick={() => setIsOpen(prev => !prev)} > 
                     { trigger } 
                 </div>
 
-                {isOpen && children}
+                {isOpen && (
+                    <>
+                        { children } 
+                        { close && <div onClick={() => setIsOpen(prev => !prev)} > {close} </div> }
+                    </>
+                    )
+                }
 
-                {close && <div onClick={() => setIsOpen(prev => !prev)} >close</div>}
             </div>
     )
 }
