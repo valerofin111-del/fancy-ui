@@ -1,18 +1,42 @@
 {
   "name": "fancy-ui-react",
-  "module": "index.ts",
+  "version": "0.1.0",
+  "author": "valerofin",
   "type": "module",
+  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf dist && bun run build:js && bun run build:types",
+    "build:js": "bun build ./src/index.ts --outdir ./dist --format esm --minify",
+    "build:types": "tsc --project tsconfig.build.json"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "typescript": "^5.9.3"
-  },
-  "dependencies": {
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

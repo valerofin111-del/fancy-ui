@@ -1,26 +1,16 @@
 import type { FC, ReactNode } from 'react'
 import { useState } from 'react'
-import { createPortal } from 'react-dom'
-
-interface Content {
-    children?: ReactNode,
-    isOpen?: boolean
-}
-
-export var Content : FC<Content> = ({ children, isOpen }) => {
-    if (!isOpen) return null
-
-    return createPortal(<>{children ? children : 'content' }</>, document.body)
-}
 
 interface ModalTypes {
     children?: ReactNode,
     trigger?: ReactNode,
     close?: ReactNode,
-    side?: 'top' | 'right' | 'left' | 'bottom'
+    side?: 'top' | 'right' | 'left' | 'bottom',
+    id?: string,
+    className?: string
 }
 
-export var Modal : FC<ModalTypes> = ({ children, trigger, close, side = 'bottom' }) => {
+export var Modal = ( { children, trigger, close, side = 'bottom', id, className } : ModalTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
@@ -47,16 +37,16 @@ export var Modal : FC<ModalTypes> = ({ children, trigger, close, side = 'bottom'
     }
 
     return (
-        <>
-            <div style={{display: 'flex', flexDirection: direction }} >
-                <div onClick={() => setIsOpen(prev => !prev)} > { trigger ? trigger : 'trigger' } </div>
-                <Content isOpen={isOpen}> { children } </Content>
+            <div id={id} className={className} 
+                style={{display: 'flex', flexDirection: direction }}
+            >
+                <div onClick={() => setIsOpen(prev => !prev)}                 > 
+                    { trigger } 
+                </div>
+
+                {isOpen && children}
+
+                {close && <div onClick={() => setIsOpen(prev => !prev)} >close</div>}
             </div>
-
-            {close && (
-                <div onClick={() => setIsOpen(prev => !prev)} > {close} </div>
-            )}
-
-        </>
     )
 }

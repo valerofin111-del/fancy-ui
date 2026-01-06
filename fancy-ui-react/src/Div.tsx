@@ -16,16 +16,21 @@ interface DivTypes {
     pTop?: CSSLength,
     pLeft?: CSSLength,
     pRight?: CSSLength,
-    pBottom?: CSSLength
+    pBottom?: CSSLength,
+    w?: CSSLength,
+    h?: CSSLength,
+    id?: string,
+    className?: string
 }
 
-export var Div : FC<DivTypes> = ( { children, justify, align, direction,
+export var Div = ( { children, justify, align, direction,
         m, mTop, mLeft, mRight, mBottom, 
-        p, pTop, pLeft, pRight, pBottom } ) => {
+        p, pTop, pLeft, pRight, pBottom,
+        w, h, id, className } : DivTypes ) => {
     return (
-        <div style={{ display: "flex", justifyContent: justify, alignItems: align, flexDirection: direction,
+        <div id={id} className={className} style={{ display: "flex", justifyContent: justify, alignItems: align, flexDirection: direction,
             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
-             }} > {children ? children : 'div' } </div>
+            width: w, height: h }} > { children } </div>
     )
 }
