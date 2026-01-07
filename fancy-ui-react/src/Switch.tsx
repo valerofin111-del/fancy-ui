@@ -72,7 +72,10 @@ export var Switch = ( { children, triggers, contents, close , side, id, classNam
                         <div onKeyDown={(e) => EnterOrSpace(e, () => {setContent(key)})} 
                             onClick={() => setContent(key)}
                             style={{ cursor: 'pointer' }}
-                            key={key} tabIndex={0} role="button" > {triggers![key]} </div>
+                            key={key} tabIndex={0} role="button"
+                        > 
+                            {triggers![key]} 
+                        </div>
                     ))
                 }
             </div>
@@ -83,7 +86,9 @@ export var Switch = ( { children, triggers, contents, close , side, id, classNam
                     <>
                         { contents[content] }
                         {close && (
-                            <div onClick={() => setContent(undefined)} > 
+                            <div onClick={() => setContent(undefined)} 
+                                style={{ cursor: 'pointer' }}
+                            > 
                                 {close} 
                             </div> 
                             )

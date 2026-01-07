@@ -1,4 +1,5 @@
-import { useState, type ReactNode } from "react"
+import type { ReactNode, KeyboardEvent } from "react"
+import { useState } from "react"
 
 interface AlertTypes {
     children?: ReactNode,
@@ -24,9 +25,18 @@ export var Alert = ( { children, trigger, action, color, close, bgOpacity = 0.5,
     
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
+    var EnterOrSpace = function ( e : KeyboardEvent, func: () => void ) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            func()
+        }
+    }
+
     return (
         <div>
-            <div tabIndex={0} role='button' onClick={() => setIsOpen(prev => !prev)} >
+            <div tabIndex={0} role='button' 
+                onClick={() => setIsOpen(prev => !prev)} style={{ cursor: 'pointer' }}
+            >
                 { trigger }
             </div>
 
@@ -43,13 +53,17 @@ export var Alert = ( { children, trigger, action, color, close, bgOpacity = 0.5,
                     >
                         { children }
                         { action && (
-                            <div tabIndex={0} role='button' onClick={() => setIsOpen(prev => !prev)} > 
+                            <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})}
+                                onClick={() => setIsOpen(prev => !prev)} style={{ cursor: 'pointer' }}
+                            > 
                                 { action } 
                             </div>
                             ) 
                         }
                         { close && (
-                            <div tabIndex={0} role='button' onClick={() => setIsOpen(prev => !prev)} >
+                            <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})}
+                                onClick={() => setIsOpen(prev => !prev)} style={{ cursor: 'pointer' }}
+                            >
                                 { close } 
                             </div>
                             )
