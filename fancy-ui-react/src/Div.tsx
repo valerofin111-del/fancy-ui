@@ -4,23 +4,24 @@ type CSSLength = number | string
 
 interface DivTypes {
     children?: ReactNode,
-    justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly',
-    align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline',
-    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
-    m?: CSSLength,
-    mTop?: CSSLength,
-    mLeft?: CSSLength,
-    mRight?: CSSLength,
-    mBottom?: CSSLength,
-    p?: CSSLength,
-    pTop?: CSSLength,
-    pLeft?: CSSLength,
-    pRight?: CSSLength,
-    pBottom?: CSSLength,
-    gap?: CSSLength,
-    w?: CSSLength,
-    h?: CSSLength,
-    id?: string,
+    justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
+    align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline'
+    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+    wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+    m?: CSSLength
+    mTop?: CSSLength
+    mLeft?: CSSLength
+    mRight?: CSSLength
+    mBottom?: CSSLength
+    p?: CSSLength
+    pTop?: CSSLength
+    pLeft?: CSSLength
+    pRight?: CSSLength
+    pBottom?: CSSLength
+    gap?: CSSLength
+    w?: CSSLength
+    h?: CSSLength
+    id?: string
     className?: string
 }
 

@@ -5,27 +5,27 @@ import { createPortal } from "react-dom"
 type CSSLength = number | string
 
 interface AlertTypes {
-    children?: ReactNode,
-    trigger?: ReactNode,
-    action?: ReactNode,
-    close?: ReactNode,
-    direction?: 'column-reverse' | 'row-reverse' | 'row' | 'column',
-    color?: string,
-    bgOpacity?: number,
-    m?: CSSLength,
-    mTop?: CSSLength,
-    mLeft?: CSSLength,
-    mRight?: CSSLength,
-    mBottom?: CSSLength,
-    p?: CSSLength,
-    pTop?: CSSLength,
-    pLeft?: CSSLength,
-    pRight?: CSSLength,
-    pBottom?: CSSLength,
-    gap?: CSSLength,
-    w?: CSSLength,
-    h?: CSSLength,
-    id?: string,
+    children?: ReactNode
+    trigger?: ReactNode
+    action?: ReactNode
+    close?: ReactNode
+    direction?: 'column-reverse' | 'row-reverse' | 'row' | 'column'
+    color?: string
+    bgOpacity?: number
+    m?: CSSLength
+    mTop?: CSSLength
+    mLeft?: CSSLength
+    mRight?: CSSLength
+    mBottom?: CSSLength
+    p?: CSSLength
+    pTop?: CSSLength
+    pLeft?: CSSLength
+    pRight?: CSSLength
+    pBottom?: CSSLength
+    gap?: CSSLength
+    w?: CSSLength
+    h?: CSSLength
+    id?: string
     className?: string
 }
 
@@ -73,7 +73,7 @@ export var Alert = ( { children, trigger, action, color, close, direction = 'col
                                 </div>
                                 )
                             }
-                            
+
                             { action && (
                                 <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})}
                                     onClick={() => setIsOpen(prev => !prev)} style={{ cursor: 'pointer' }}

@@ -2,12 +2,12 @@ import type { ReactNode, KeyboardEvent } from "react"
 import { useState } from 'react'
 
 interface SwitchTypes {
-    children?: ReactNode,
-    triggers?: Record<string, ReactNode>,
-    contents?: Record<string, ReactNode>,
-    close?: ReactNode,
-    side?: 'top' | 'right' | 'left' | 'bottom',
-    id?: string,
+    children?: ReactNode
+    triggers?: Record<string, ReactNode>
+    contents?: Record<string, ReactNode>
+    close?: ReactNode
+    side?: 'top' | 'right' | 'left' | 'bottom'
+    id?: string
     className?: string
 }
 

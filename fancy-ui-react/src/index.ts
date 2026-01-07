@@ -4,6 +4,8 @@ export { Switch } from './Switch'
 export { Progress } from './Progress'
 export { Alert } from './Alert'
 export { Notification } from './Notification'
+export { Separator } from './Separator'
+export { Menu } from './Menu'
 
 // here -->
 

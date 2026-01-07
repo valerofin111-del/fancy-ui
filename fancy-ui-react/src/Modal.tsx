@@ -2,11 +2,11 @@ import type { ReactNode, KeyboardEvent } from 'react'
 import { useState } from 'react'
 
 interface ModalTypes {
-    children?: ReactNode,
-    trigger?: ReactNode,
-    close?: ReactNode,
-    side?: 'top' | 'right' | 'left' | 'bottom',
-    id?: string,
+    children?: ReactNode
+    trigger?: ReactNode
+    close?: ReactNode
+    side?: 'top' | 'right' | 'left' | 'bottom'
+    id?: string
     className?: string
 }
 

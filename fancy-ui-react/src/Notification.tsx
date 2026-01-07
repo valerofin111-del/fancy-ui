@@ -5,28 +5,28 @@ import { createPortal } from "react-dom"
 type CSSLength = number | string
 
 interface NotificationTypes {
-    children?: ReactNode,
-    trigger?: ReactNode,
-    close?: ReactNode,
-    action?: ReactNode,
-    time?: number,
-    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
-    color?: string,
-    bgOpacity?: number,
-    m?: CSSLength,
-    mTop?: CSSLength,
-    mLeft?: CSSLength,
-    mRight?: CSSLength,
-    mBottom?: CSSLength,
-    p?: CSSLength,
-    pTop?: CSSLength,
-    pLeft?: CSSLength,
-    pRight?: CSSLength,
-    pBottom?: CSSLength,
-    gap?: CSSLength,
-    w?: CSSLength,
-    h?: CSSLength,
-    id?: string,
+    children?: ReactNode
+    trigger?: ReactNode
+    close?: ReactNode
+    action?: ReactNode
+    time?: number
+    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+    color?: string
+    bgOpacity?: number
+    m?: CSSLength
+    mTop?: CSSLength
+    mLeft?: CSSLength
+    mRight?: CSSLength
+    mBottom?: CSSLength
+    p?: CSSLength
+    pTop?: CSSLength
+    pLeft?: CSSLength
+    pRight?: CSSLength
+    pBottom?: CSSLength
+    gap?: CSSLength
+    w?: CSSLength
+    h?: CSSLength
+    id?: string
     className?: string
 }
 
