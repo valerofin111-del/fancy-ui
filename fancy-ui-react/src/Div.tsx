@@ -17,6 +17,7 @@ interface DivTypes {
     pLeft?: CSSLength,
     pRight?: CSSLength,
     pBottom?: CSSLength,
+    gap?: CSSLength,
     w?: CSSLength,
     h?: CSSLength,
     id?: string,
@@ -26,11 +27,11 @@ interface DivTypes {
 export var Div = ( { children, justify, align, direction,
         m, mTop, mLeft, mRight, mBottom, 
         p, pTop, pLeft, pRight, pBottom,
-        w, h, id, className } : DivTypes ) => {
+        gap, w, h, id, className } : DivTypes ) => {
     return (
         <div id={id} className={className} style={{ display: "flex", justifyContent: justify, alignItems: align, flexDirection: direction,
             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
-            width: w, height: h }} > { children } </div>
+            gap: gap, width: w, height: h }} > { children } </div>
     )
 }

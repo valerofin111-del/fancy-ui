@@ -82,7 +82,12 @@ export var Switch = ( { children, triggers, contents, close , side, id, classNam
                 { content && contents && (
                     <>
                         { contents[content] }
-                        {close && <div onClick={() => setContent(undefined)} > {close} </div> }
+                        {close && (
+                            <div onClick={() => setContent(undefined)} > 
+                                {close} 
+                            </div> 
+                            )
+                        }
                     </>
                 ) }
             </div>

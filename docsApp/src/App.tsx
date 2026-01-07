@@ -1,21 +1,51 @@
-import { Div } from 'fancy-ui-react'
+import { Alert, Div, Progress } from 'fancy-ui-react'
 import { Modal } from 'fancy-ui-react'
 import { Switch } from 'fancy-ui-react'
 
-function App() {
+interface Div123Types {
+  children?: React.ReactNode
+}
+
+var Div123 = ({ children } : Div123Types ) => {
+  return (
+    <Div justify={'center'} mTop={'12px'} gap={'12px'}> {children} </Div>
+  )
+}
+
+var App = function () {
 
   return (
     <>
-      <Div justify={'center'} mTop={'120px'}>
-        <Modal side={'bottom'} trigger={
-          <Div w={'120px'} justify={'center'}>Click!</Div>
-          } close={<Div justify={'center'} w={'120px'}>Close</Div>} >
-            <Div justify={'center'} w={'120px'} >Hello, World!</Div>
-          </Modal>
+      <Div direction={'row'} gap={'120px'} justify={'center'}>
 
-          <Div justify={'center'} mTop={'120px'} >
-            <Switch side={'bottom'} triggers={{ 1: <p>trigger_1</p>, 2: <p>trigger_2</p> }} contents={{ 1: <p>content_1</p>, 2: <p>content_2</p> }} close={<p>Close</p>} >Hello</Switch>
-          </Div>
+        <Div123>
+          <Modal side={'bottom'} trigger={
+            <Div123>Click!</Div123>
+            } close={<Div123>Close</Div123>} >
+              <Div123>Hello</Div123>
+            </Modal>
+        </Div123>
+
+        <Div123>
+          <Switch side={'bottom'} 
+            triggers={{ 1: <Div123>trigger_1</Div123>, 2: <Div123>trigger_2</Div123> }} 
+            contents={{ 1: <Div123>content_1</Div123>, 2: <Div123>content_2</Div123> }} 
+            close={<Div123>Close</Div123>} 
+          >
+            <Div123>Hello</Div123>
+          </Switch>
+        </Div123>
+
+        <Div123>
+          <Progress m={'120px'} w={'120px'} h={'12px'} color={'black'} progress='73%'/>
+        </Div123>
+
+        <Div123>
+          <Alert bgOpacity={0.55} color={'white'} w={'360px'} h={'480px'} trigger={<Div123>Trigger</Div123>} action={<Div123>Action</Div123>} close={<Div123>Close</Div123>} >
+            <Div123>Alert!!!</Div123>
+          </Alert>
+        </Div123>
+
       </Div>
     </>
   )

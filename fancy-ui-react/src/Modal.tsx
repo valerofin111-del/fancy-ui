@@ -40,14 +40,19 @@ export var Modal = ( { children, trigger, close, side = 'bottom', id, className 
             <div id={id} className={className} tabIndex={0}
                 style={{display: 'flex', flexDirection: direction }}
             >
-                <div onClick={() => setIsOpen(prev => !prev)} > 
-                    { trigger } 
+                <div tabIndex={0} role='button' onClick={() => setIsOpen(prev => !prev)} > 
+                    { trigger }
                 </div>
 
                 {isOpen && (
                     <>
                         { children } 
-                        { close && <div onClick={() => setIsOpen(prev => !prev)} > {close} </div> }
+                        { close && (
+                            <div tabIndex={0} role='button' onClick={() => setIsOpen(prev => !prev)} >
+                                {close} 
+                            </div> 
+                            )
+                        }
                     </>
                     )
                 }
