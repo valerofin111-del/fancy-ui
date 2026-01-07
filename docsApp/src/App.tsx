@@ -1,6 +1,7 @@
 import { Alert, Div, Progress } from 'fancy-ui-react'
 import { Modal } from 'fancy-ui-react'
 import { Switch } from 'fancy-ui-react'
+import { Notification } from 'fancy-ui-react'
 import './index.css'
 import { useState } from 'react'
 
@@ -47,9 +48,13 @@ var App = function () {
         </Div>
 
         <Div123>
-          <Alert bgOpacity={0.55} color={'white'} w={'360px'} h={'480px'} trigger={<Div123>Trigger</Div123>} action={<Div123>Action</Div123>} close={<Div123>Close</Div123>} >
+          <Alert gap={'120px'} direction={'row'} bgOpacity={0.55} color={'gray'} w={'360px'} h={'480px'} trigger={<Div123>Trigger</Div123>} action={<button>Action</button>} close={<button style={{ padding: 'auto' }}>Close</button>} >
             <Div123>Alert!!!</Div123>
           </Alert>
+        </Div123>
+
+        <Div123>
+          <Notification mTop={'12px'} w={'220px'} h={'120px'} gap={'12px'} color={'gray'} action={<p>Action</p>} close={<p>Close</p>} mBottom={'auto'} trigger={<p>say Hello</p>} >Hello!!!</Notification>
         </Div123>
 
       </Div>

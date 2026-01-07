@@ -1,15 +1,16 @@
 import type { ReactNode, KeyboardEvent } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { createPortal } from "react-dom"
 
 type CSSLength = number | string
 
-interface AlertTypes {
+interface NotificationTypes {
     children?: ReactNode,
     trigger?: ReactNode,
-    action?: ReactNode,
     close?: ReactNode,
-    direction?: 'column-reverse' | 'row-reverse' | 'row' | 'column',
+    action?: ReactNode,
+    time?: number,
+    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse',
     color?: string,
     bgOpacity?: number,
     m?: CSSLength,
@@ -29,41 +30,53 @@ interface AlertTypes {
     className?: string
 }
 
-export var Alert = ( { children, trigger, action, color, close, direction = 'column' , bgOpacity = 0.5,
-        m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom, 
-        gap, w, h, id, className } : AlertTypes ) => {
-    
-    var [ isOpen, setIsOpen ] = useState<boolean>(false)
+export var Notification = ( { children, trigger, close, action, time = 1000,
+        direction = 'row', color, bgOpacity = 0,
+        m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
+        gap, w, h, id, className } : NotificationTypes ) => {
 
-    var EnterOrSpace = function ( e : KeyboardEvent, func: () => void ) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault()
-            func()
+        var [ isOpen, setIsOpen ] = useState<boolean>(false)
+
+        var EnterOrSpace = function ( e : KeyboardEvent, func: () => void ) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                func()
+            }
         }
-    }
+
+        var pushNotification = () => {
+            setIsOpen(true)
+
+            var timeout = setTimeout(() => {
+                setIsOpen(false)
+            }, time)
+
+            return () => clearTimeout(timeout)
+        }
 
     return (
         <div>
-            <div tabIndex={0} role='button' 
-                onClick={() => setIsOpen(prev => !prev)} style={{ cursor: 'pointer' }}
+            <div tabIndex={0} role='button' onClick={pushNotification} 
+                style={{ cursor: isOpen ? 'not-allowed' : 'pointer', pointerEvents: isOpen ? 'none' : 'auto' }}
             >
                 { trigger }
             </div>
 
             { isOpen && createPortal(          
-                <div onClick={() => setIsOpen(prev => !prev)}
-                    style={{ display: 'flex', zIndex: '900', justifyContent: 'center', alignItems: 'center', position: 'fixed',
-                        top: '0', left: '0', width: '100%', height: '100%', backgroundColor: `rgba(0, 0, 0, ${bgOpacity})`}}
+                <div style={{ display: 'flex', zIndex: '900', pointerEvents: 'none',
+                        justifyContent: 'center', alignItems: 'center', position: 'fixed',
+                        top: '0', left: '0', width: '100%', height: '100%', 
+                        backgroundColor: `rgba(0, 0, 0, ${bgOpacity})` }} 
                 >
-                    <div id={id} className={className} onClick={(e) => e.stopPropagation()}
+                    <div id={id} className={className}
                         style={{ display: 'flex', zIndex: '999', backgroundColor: color,
+                            margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
                             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
-                            gap: gap, width: w, height: h, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-                            margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom 
-                          }} 
+                            gap: gap, width: w, height: h, position: 'relative', pointerEvents: 'auto',
+                            flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }} 
                     >
                         { children }
-
+                        
                         <div style={{ display: 'flex', flexDirection: direction, gap: gap }} >
                             { close && (
                                 <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})}

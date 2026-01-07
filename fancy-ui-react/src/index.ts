@@ -3,6 +3,7 @@ export { Modal } from './Modal'
 export { Switch } from './Switch'
 export { Progress } from './Progress'
 export { Alert } from './Alert'
+export { Notification } from './Notification'
 
 // here -->
 
