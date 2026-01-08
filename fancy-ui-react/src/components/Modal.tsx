@@ -1,5 +1,5 @@
 import type { ReactNode, KeyboardEvent } from 'react'
-import { useState } from 'react'
+import { Activity, useState } from 'react'
 import type { sideType } from '../types/props'
 
 interface ModalTypes {
@@ -56,20 +56,20 @@ export var Modal = ( { children, trigger, close, side = 'bottom', id, b, bRadius
                 { trigger }
             </div>
 
-            {isOpen && (
-                <>
+            <Activity mode={ isOpen ? 'visible' : 'hidden' } >
+                <div style={{ border: b, borderRadius: bRadius }}>
                     { children } 
                     { close && (
                         <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})}
-                            onClick={() => setIsOpen(prev => !prev)} style={{ cursor: 'pointer' }}
+                            onClick={() => setIsOpen(prev => !prev)} 
+                            style={{ cursor: 'pointer' }}
                         >
                             {close} 
                         </div> 
                         )
                     }
-                </>
-                )
-            }
+                </div>
+            </Activity>
 
         </div>
     )

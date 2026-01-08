@@ -1,4 +1,4 @@
-import { type ReactNode, type KeyboardEvent, useState } from "react"
+import { type ReactNode, type KeyboardEvent, useState, Activity } from "react"
 import type { ReactNodes, sideType } from "../types/props"
 
 interface MenuTypes {
@@ -52,7 +52,7 @@ export var Menu = ({ trigger, items, side = 'bottom', b, bRadius, id, className 
                 { trigger } 
             </div>
 
-            { isOpen && (
+            <Activity mode={ isOpen ? 'visible' : 'hidden' }>
                 <div style={{ display: 'flex', flexDirection: direction, border: b, borderRadius: bRadius }} >
                 {
                     items && Object.keys(items).map(key => (
@@ -66,8 +66,7 @@ export var Menu = ({ trigger, items, side = 'bottom', b, bRadius, id, className 
                     ))
                 }
                 </div>
-                )
-            }
+            </Activity>
         </ div>
     )
 }

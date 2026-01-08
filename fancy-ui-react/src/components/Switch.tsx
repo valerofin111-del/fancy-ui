@@ -1,5 +1,5 @@
 import type { ReactNode, KeyboardEvent } from "react"
-import { useState } from 'react'
+import { Activity, useState } from 'react'
 import type { ReactNodes } from "../types/props"
 
 interface SwitchTypes {
@@ -69,7 +69,7 @@ export var Switch = ( { children, triggers, contents, close , side, b, bRadius, 
 
     return (
         <div id={id} className={className} style={{ display: 'flex', flexDirection: direction }} >
-            <div style={{ display: 'flex', flexDirection: directionInside, border: b, borderRadius: bRadius }} >
+            <div style={{ display: 'flex', flexDirection: directionInside }} >
                 {
                     triggers && Object.keys(triggers).map(key => (
                         <div onKeyDown={(e) => EnterOrSpace(e, () => {setContent(key)})} 
@@ -84,19 +84,22 @@ export var Switch = ( { children, triggers, contents, close , side, b, bRadius, 
             </div>
 
             <div>
-                { content === undefined && ( children ) }
+                <Activity mode={ content === undefined ? 'visible' : 'hidden' }>
+                    <div style={{ border: b, borderRadius: bRadius }} > { children } </div>
+                </Activity>
+
                 { content && contents && (
-                    <>
+                    <div style={{ border: b, borderRadius: bRadius }}>
                         { contents[content] }
                         {close && (
                             <div onClick={() => setContent(undefined)} 
                                 style={{ cursor: 'pointer' }}
                             > 
-                                {close} 
+                                {close}
                             </div> 
                             )
                         }
-                    </>
+                    </div>
                 ) }
             </div>
         </div>
