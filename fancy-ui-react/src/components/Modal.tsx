@@ -1,11 +1,12 @@
 import type { ReactNode, KeyboardEvent } from 'react'
 import { useState } from 'react'
+import type { sideType } from './types/props'
 
 interface ModalTypes {
     children?: ReactNode
     trigger?: ReactNode
     close?: ReactNode
-    side?: 'top' | 'right' | 'left' | 'bottom'
+    side?: sideType
     id?: string
     className?: string
 }

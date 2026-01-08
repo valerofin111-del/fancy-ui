@@ -1,15 +1,16 @@
 import type { ReactNode, KeyboardEvent } from "react"
 import { useState } from "react"
 import { createPortal } from "react-dom"
+import React from "react"
+import type { CSSLength, directionType } from "./types/props"
 
-type CSSLength = number | string
 
 interface AlertTypes {
     children?: ReactNode
     trigger?: ReactNode
     action?: ReactNode
     close?: ReactNode
-    direction?: 'column-reverse' | 'row-reverse' | 'row' | 'column'
+    direction?: directionType
     color?: string
     bgOpacity?: number
     m?: CSSLength
@@ -29,7 +30,7 @@ interface AlertTypes {
     className?: string
 }
 
-export var Alert = ( { children, trigger, action, color, close, direction = 'column' , bgOpacity = 0.5,
+export var Alert = React.memo(( { children, trigger, action, color, close, direction = 'column' , bgOpacity = 0.5,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom, 
         gap, w, h, id, className } : AlertTypes ) => {
     
@@ -89,4 +90,4 @@ export var Alert = ( { children, trigger, action, color, close, direction = 'col
             }
         </div>
     )
-}
+})

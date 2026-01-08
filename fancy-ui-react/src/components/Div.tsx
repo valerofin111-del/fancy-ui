@@ -1,13 +1,13 @@
 import type { ReactNode } from "react"
-
-type CSSLength = number | string
+import React from 'react'
+import type { alignType, CSSLength, directionType, justifyType, wrapType } from "./types/props"
 
 interface DivTypes {
     children?: ReactNode,
-    justify?: 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'
-    align?: 'start' | 'center' | 'end' | 'stretch' | 'baseline'
-    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
-    wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+    justify?: justifyType
+    align?: alignType
+    direction?: directionType
+    wrap?: wrapType
     m?: CSSLength
     mTop?: CSSLength
     mLeft?: CSSLength
@@ -25,14 +25,15 @@ interface DivTypes {
     className?: string
 }
 
-export var Div = ( { children, justify, align, direction,
+export var Div = React.memo(( { children, justify, align, direction, wrap,
         m, mTop, mLeft, mRight, mBottom, 
         p, pTop, pLeft, pRight, pBottom,
         gap, w, h, id, className } : DivTypes ) => {
     return (
-        <div id={id} className={className} style={{ display: "flex", justifyContent: justify, alignItems: align, flexDirection: direction,
+        <div id={id} className={className} style={{ display: "flex", 
+            justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap,
             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
             gap: gap, width: w, height: h }} > { children } </div>
     )
-}
+})

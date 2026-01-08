@@ -1,10 +1,10 @@
-import type { ReactNode, KeyboardEvent } from "react"
-import { useState } from "react"
+import { type ReactNode, type KeyboardEvent, useState } from "react"
+import type { ReactNodes, sideType } from "./types/props"
 
 interface MenuTypes {
     trigger?: ReactNode
-    items?: Record<string, ReactNode>
-    side?: 'top' | 'right' | 'left' | 'bottom'
+    items?: ReactNodes
+    side?: sideType
     id?: string
     className?: string
 }

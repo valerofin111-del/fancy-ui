@@ -1,6 +1,7 @@
 import type { ReactNode, KeyboardEvent } from "react"
-import { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { createPortal } from "react-dom"
+import type { directionType } from "./types/props"
 
 type CSSLength = number | string
 
@@ -10,7 +11,7 @@ interface NotificationTypes {
     close?: ReactNode
     action?: ReactNode
     time?: number
-    direction?: 'row' | 'column' | 'row-reverse' | 'column-reverse'
+    direction?: directionType
     color?: string
     bgOpacity?: number
     m?: CSSLength
@@ -30,7 +31,7 @@ interface NotificationTypes {
     className?: string
 }
 
-export var Notification = ( { children, trigger, close, action, time = 1000,
+export var Notification = React.memo(( { children, trigger, close, action, time = 1000,
         direction = 'row', color, bgOpacity = 0,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
         gap, w, h, id, className } : NotificationTypes ) => {
@@ -102,4 +103,4 @@ export var Notification = ( { children, trigger, close, action, time = 1000,
             }
         </div>
     )
-}
+})

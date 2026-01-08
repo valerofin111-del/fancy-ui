@@ -1,10 +1,11 @@
 import type { ReactNode, KeyboardEvent } from "react"
 import { useState } from 'react'
+import type { ReactNodes } from "./types/props"
 
 interface SwitchTypes {
     children?: ReactNode
-    triggers?: Record<string, ReactNode>
-    contents?: Record<string, ReactNode>
+    triggers?: ReactNodes
+    contents?: ReactNodes
     close?: ReactNode
     side?: 'top' | 'right' | 'left' | 'bottom'
     id?: string

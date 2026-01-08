@@ -1,11 +1,11 @@
-export { Div } from './Div'
-export { Modal } from './Modal'
-export { Switch } from './Switch'
-export { Progress } from './Progress'
-export { Alert } from './Alert'
-export { Notification } from './Notification'
-export { Separator } from './Separator'
-export { Menu } from './Menu'
+export { Div } from './components/Div'
+export { Modal } from './components/Modal'
+export { Switch } from './components/Switch'
+export { Progress } from './components/Progress'
+export { Alert } from './components/Alert'
+export { Notification } from './components/Notification'
+export { Separator } from './components/Separator'
+export { Menu } from './components/Menu'
 
 // here -->
 

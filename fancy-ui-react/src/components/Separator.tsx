@@ -1,7 +1,10 @@
+import React from "react"
+import type { orientationType } from "./types/props"
+
 type CSSLength = number | string
 
 interface SeparatorTypes {
-    orientation?: 'vertical' | 'horizontal'
+    orientation?: orientationType
     length?: CSSLength
     thickness?: CSSLength
     color?: string
@@ -15,7 +18,7 @@ interface SeparatorTypes {
     className?: string
 }
 
-export var Separator = ( { orientation = 'horizontal', length, thickness, color, radius,
+export var Separator = React.memo(( { orientation = 'horizontal', length, thickness, color, radius,
         m, mTop, mLeft, mRight, mBottom, id, className } : SeparatorTypes ) => {
 
     return (
@@ -25,4 +28,4 @@ export var Separator = ( { orientation = 'horizontal', length, thickness, color,
             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom }} 
         />
     )
-}
+})

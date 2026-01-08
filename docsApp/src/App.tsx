@@ -44,7 +44,7 @@ var App = function () {
 
 
         <Div justify={'center'} direction={'column-reverse'}>
-          <Progress className='progress' m={'120px'} w={'120px'} h={'12px'} color={'black'} progress={`${state}%`}/>
+          <Progress className='progress' w={'120px'} h={'12px'} color={'black'} progress={`${state}%`}/>
           <button onClick={() => setState(prev => prev - 5)}>- progress bar</button>
           <button onClick={() => setState(prev => prev + 5)}>+ progress bar</button>
         </Div>
