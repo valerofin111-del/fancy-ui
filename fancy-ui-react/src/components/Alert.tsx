@@ -2,8 +2,7 @@ import type { ReactNode, KeyboardEvent } from "react"
 import { useState } from "react"
 import { createPortal } from "react-dom"
 import React from "react"
-import type { CSSLength, directionType } from "./types/props"
-
+import type { CSSLength, directionType } from "../types/props"
 
 interface AlertTypes {
     children?: ReactNode
@@ -12,6 +11,8 @@ interface AlertTypes {
     close?: ReactNode
     direction?: directionType
     color?: string
+    b?: string
+    bRadius?: string
     bgOpacity?: number
     m?: CSSLength
     mTop?: CSSLength
@@ -30,7 +31,8 @@ interface AlertTypes {
     className?: string
 }
 
-export var Alert = React.memo(( { children, trigger, action, color, close, direction = 'column' , bgOpacity = 0.5,
+export var Alert = React.memo(( { children, trigger, action, color, b, bRadius,
+        close, direction = 'column' , bgOpacity = 0.5,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom, 
         gap, w, h, id, className } : AlertTypes ) => {
     
@@ -60,8 +62,8 @@ export var Alert = React.memo(( { children, trigger, action, color, close, direc
                         style={{ display: 'flex', zIndex: '999', backgroundColor: color,
                             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
                             gap: gap, width: w, height: h, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-                            margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom 
-                          }} 
+                            margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
+                            border: b, borderRadius: bRadius }} 
                     >
                         { children }
 

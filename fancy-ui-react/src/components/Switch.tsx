@@ -1,6 +1,6 @@
 import type { ReactNode, KeyboardEvent } from "react"
 import { useState } from 'react'
-import type { ReactNodes } from "./types/props"
+import type { ReactNodes } from "../types/props"
 
 interface SwitchTypes {
     children?: ReactNode
@@ -8,11 +8,13 @@ interface SwitchTypes {
     contents?: ReactNodes
     close?: ReactNode
     side?: 'top' | 'right' | 'left' | 'bottom'
+    b?: string
+    bRadius?: string
     id?: string
     className?: string
 }
 
-export var Switch = ( { children, triggers, contents, close , side, id, className } : SwitchTypes ) => {
+export var Switch = ( { children, triggers, contents, close , side, b, bRadius, id, className } : SwitchTypes ) => {
 
     var [ content, setContent ] = useState<string | undefined>(undefined)
 
@@ -67,7 +69,7 @@ export var Switch = ( { children, triggers, contents, close , side, id, classNam
 
     return (
         <div id={id} className={className} style={{ display: 'flex', flexDirection: direction }} >
-            <div style={{ display: 'flex', flexDirection: directionInside }} >
+            <div style={{ display: 'flex', flexDirection: directionInside, border: b, borderRadius: bRadius }} >
                 {
                     triggers && Object.keys(triggers).map(key => (
                         <div onKeyDown={(e) => EnterOrSpace(e, () => {setContent(key)})} 

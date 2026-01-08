@@ -7,18 +7,6 @@ export { Notification } from './components/Notification'
 export { Separator } from './components/Separator'
 export { Menu } from './components/Menu'
 
-// here -->
-
 // bun run build
-// npm pack
-// npm link
-
-// <-- here
-
-
-
-// in docsApp -->
-
-// npm link fancy-ui-react
-
-// <-- in docsApp
+// bun pm pack
+// bun link

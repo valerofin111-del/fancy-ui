@@ -1,15 +1,17 @@
 import { type ReactNode, type KeyboardEvent, useState } from "react"
-import type { ReactNodes, sideType } from "./types/props"
+import type { ReactNodes, sideType } from "../types/props"
 
 interface MenuTypes {
     trigger?: ReactNode
     items?: ReactNodes
     side?: sideType
+    b?: string
+    bRadius?: string
     id?: string
     className?: string
 }
 
-export var Menu = ({ trigger, items, side = 'bottom', id, className } : MenuTypes) => {
+export var Menu = ({ trigger, items, side = 'bottom', b, bRadius, id, className } : MenuTypes) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
@@ -51,7 +53,7 @@ export var Menu = ({ trigger, items, side = 'bottom', id, className } : MenuType
             </div>
 
             { isOpen && (
-                <div style={{ display: 'flex', flexDirection: direction }} >
+                <div style={{ display: 'flex', flexDirection: direction, border: b, borderRadius: bRadius }} >
                 {
                     items && Object.keys(items).map(key => (
                         <div onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})} 

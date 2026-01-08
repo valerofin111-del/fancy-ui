@@ -1,9 +1,7 @@
 import type { ReactNode, KeyboardEvent } from "react"
 import React, { useState } from "react"
 import { createPortal } from "react-dom"
-import type { directionType } from "./types/props"
-
-type CSSLength = number | string
+import type { CSSLength, directionType } from "../types/props"
 
 interface NotificationTypes {
     children?: ReactNode
@@ -13,6 +11,8 @@ interface NotificationTypes {
     time?: number
     direction?: directionType
     color?: string
+    b?: string
+    bRadius?: string
     bgOpacity?: number
     m?: CSSLength
     mTop?: CSSLength
@@ -32,7 +32,7 @@ interface NotificationTypes {
 }
 
 export var Notification = React.memo(( { children, trigger, close, action, time = 1000,
-        direction = 'row', color, bgOpacity = 0,
+        direction = 'row', color, b, bRadius, bgOpacity = 0,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
         gap, w, h, id, className } : NotificationTypes ) => {
 
@@ -74,7 +74,8 @@ export var Notification = React.memo(( { children, trigger, close, action, time 
                             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
                             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
                             gap: gap, width: w, height: h, position: 'relative', pointerEvents: 'auto',
-                            flexDirection: 'column', justifyContent: 'center', alignItems: 'center', }} 
+                            flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+                            border: b, borderRadius: bRadius }} 
                     >
                         { children }
                         

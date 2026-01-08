@@ -2,8 +2,8 @@ import { Alert, Div, Menu, Progress, Separator } from 'fancy-ui-react'
 import { Modal } from 'fancy-ui-react'
 import { Switch } from 'fancy-ui-react'
 import { Notification } from 'fancy-ui-react'
-import './index.css'
 import { useState } from 'react'
+import './index.css'
 
 interface Div123Types {
   children?: React.ReactNode
@@ -44,7 +44,7 @@ var App = function () {
 
 
         <Div justify={'center'} direction={'column-reverse'}>
-          <Progress className='progress' w={'120px'} h={'12px'} color={'black'} progress={`${state}%`}/>
+          <Progress b={'2px solid red'} bRadius={'8px'} orientation={'horizontal'} w={'120px'} h={'12px'} color={'black'} progress={`${state}%`}/>
           <button onClick={() => setState(prev => prev - 5)}>- progress bar</button>
           <button onClick={() => setState(prev => prev + 5)}>+ progress bar</button>
         </Div>
