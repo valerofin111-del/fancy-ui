@@ -1,4 +1,4 @@
-@use './templates.scss' as t;
+@use './index.scss' as i;
 
 @mixin Root {
 }
@@ -36,18 +36,18 @@
 
 .RootWhiteTheme {
     @include Root;
-    color: t.$color-fg-whiteTheme;
+    color: i.$color-fg-whiteTheme;
     
     a {
         text-decoration: none;
-        color: t.$color-fg-whiteTheme;
+        color: i.$color-fg-whiteTheme;
         font-weight: bold;
     }
 
     .Bar {
         @include Bar;
-        background-color: t.$color-bg-whiteTheme;
-        border: 2px solid t.$color-fg-whiteTheme;
+        background-color: i.$color-bg-whiteTheme;
+        border: 2px solid i.$color-fg-whiteTheme;
     }
 
     .Main {
@@ -55,32 +55,32 @@
 
         .Nav {
             @include Nav;
-            background-color: t.$color-bg-whiteTheme;
-            border: 2px solid t.$color-fg-whiteTheme;
+            background-color: i.$color-bg-whiteTheme;
+            border: 2px solid i.$color-fg-whiteTheme;
         }     
 
         .Outlet {
             @include Outlet;
-            background-color: t.$color-bg-whiteTheme;
-            border: 2px solid t.$color-fg-whiteTheme;
+            background-color: i.$color-bg-whiteTheme;
+            border: 2px solid i.$color-fg-whiteTheme;
         }  
     }
 }
 
 .RootBlackTheme {
     @include Root;
-    color: t.$color-fg-blackTheme;
+    color: i.$color-fg-blackTheme;
     
     a {
         text-decoration: none;
-        color: t.$color-fg-blackTheme;
+        color: i.$color-fg-blackTheme;
         font-weight: bold;
     }
 
     .Bar {
         @include Bar;
-        background-color: t.$color-bg-blackTheme;
-        border: 2px solid t.$color-fg-blackTheme;
+        background-color: i.$color-bg-blackTheme;
+        border: 2px solid i.$color-fg-blackTheme;
     }
 
     .Main {
@@ -89,15 +89,14 @@
         
         .Nav {
             @include Nav;
-            background-color: t.$color-bg-blackTheme;
-            border: 2px solid t.$color-fg-blackTheme;
+            background-color: i.$color-bg-blackTheme;
+            border: 2px solid i.$color-fg-blackTheme;
         }  
         
         .Outlet {
             @include Outlet;
-            background-color: t.$color-bg-blackTheme;
-            border: 2px solid t.$color-fg-blackTheme;
+            background-color: i.$color-bg-blackTheme;
+            border: 2px solid i.$color-fg-blackTheme;
         }
     }
 }
-

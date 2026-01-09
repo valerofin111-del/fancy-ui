@@ -1,7 +1,7 @@
-@use '../../../../scss/templates.scss' as t;
+@use '../../../../scss/index.scss' as i;
 
 .Button {
-    background-color: t.$color-bg-button;
+    background-color: i.$color-bg-button;
     border-radius: 40px;
     padding-top: 12px;
     padding-left: 20px;
@@ -9,6 +9,6 @@
     padding-bottom: 12px;
 
     &:hover {
-        @include t.Linear
+        @include i.Linear
     }
 }

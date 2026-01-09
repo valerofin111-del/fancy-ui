@@ -1,24 +1,8 @@
 import React from "react"
-import type { CSSLength, orientationType } from "../types/props"
-
-interface SeparatorTypes {
-    orientation?: orientationType
-    length?: CSSLength
-    thickness?: CSSLength
-    color?: string
-    m?: CSSLength
-    mTop?: CSSLength
-    mLeft?: CSSLength
-    mRight?: CSSLength
-    mBottom?: CSSLength
-    b?: string
-    bRadius?: string
-    id?: string
-    className?: string
-}
+import type FancyTypes from "../types/props"
 
 export var Separator = React.memo(( { orientation = 'horizontal', length, thickness, color,
-        m, mTop, mLeft, mRight, mBottom, b, bRadius, id, className } : SeparatorTypes ) => {
+        m, mTop, mLeft, mRight, mBottom, b, bRadius, id, className } : FancyTypes ) => {
 
     return (
         <div id={id} className={className} 

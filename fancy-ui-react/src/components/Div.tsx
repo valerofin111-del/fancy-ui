@@ -1,31 +1,5 @@
-import type { ReactNode } from "react"
 import React from 'react'
-import type { alignType, CSSLength, directionType, justifyType, wrapType } from "../types/props"
-
-interface DivTypes {
-    children?: ReactNode,
-    justify?: justifyType
-    align?: alignType
-    direction?: directionType
-    wrap?: wrapType
-    m?: CSSLength
-    mTop?: CSSLength
-    mLeft?: CSSLength
-    mRight?: CSSLength
-    mBottom?: CSSLength
-    p?: CSSLength
-    pTop?: CSSLength
-    pLeft?: CSSLength
-    pRight?: CSSLength
-    pBottom?: CSSLength
-    gap?: CSSLength
-    w?: CSSLength
-    h?: CSSLength
-    b?: string
-    bRadius?: string
-    id?: string
-    className?: string
-}
+import type { DivTypes } from '../types/props'
 
 export var Div = React.memo(( { children, justify, align, direction, wrap,
         m, mTop, mLeft, mRight, mBottom, 

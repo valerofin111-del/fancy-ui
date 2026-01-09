@@ -1,20 +1,8 @@
-import type { ReactNode, KeyboardEvent } from "react"
-import { Activity, useState } from 'react'
-import type { ReactNodes } from "../types/props"
+import { type KeyboardEvent, Activity, useState } from "react"
+import type { SwitchTypes } from "../types/props"
 
-interface SwitchTypes {
-    children?: ReactNode
-    triggers?: ReactNodes
-    contents?: ReactNodes
-    close?: ReactNode
-    side?: 'top' | 'right' | 'left' | 'bottom'
-    b?: string
-    bRadius?: string
-    id?: string
-    className?: string
-}
-
-export var Switch = ( { children, triggers, contents, close , side, b, bRadius, id, className } : SwitchTypes ) => {
+export var Switch = ( { children, triggers, contents, close, 
+        side, b, bRadius, id, className } : SwitchTypes ) => {
 
     var [ content, setContent ] = useState<string | undefined>(undefined)
 

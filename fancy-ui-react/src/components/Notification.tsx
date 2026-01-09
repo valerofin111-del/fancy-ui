@@ -1,40 +1,11 @@
-import type { ReactNode, KeyboardEvent } from "react"
-import React, { useState } from "react"
+import React, { type KeyboardEvent, useState } from "react"
 import { createPortal } from "react-dom"
-import type { CSSLength, directionType } from "../types/props"
-
-interface NotificationTypes {
-    children?: ReactNode
-    trigger?: ReactNode
-    close?: ReactNode
-    action?: ReactNode
-    time?: number
-    direction?: directionType
-    color?: string
-    b?: string
-    bRadius?: string
-    bgOpacity?: number
-    m?: CSSLength
-    mTop?: CSSLength
-    mLeft?: CSSLength
-    mRight?: CSSLength
-    mBottom?: CSSLength
-    p?: CSSLength
-    pTop?: CSSLength
-    pLeft?: CSSLength
-    pRight?: CSSLength
-    pBottom?: CSSLength
-    gap?: CSSLength
-    w?: CSSLength
-    h?: CSSLength
-    id?: string
-    className?: string
-}
+import type FancyTypes from "../types/props"
 
 export var Notification = React.memo(( { children, trigger, close, action, time = 1000,
         direction = 'row', color, b, bRadius, bgOpacity = 0,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
-        gap, w, h, id, className } : NotificationTypes ) => {
+        gap, w, h, id, className } : FancyTypes ) => {
 
         var [ isOpen, setIsOpen ] = useState<boolean>(false)
 

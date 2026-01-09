@@ -1,19 +1,7 @@
-import type { CSSLength, orientationType } from "../types/props"
-
-interface ProgressTypes {
-    progress?: `${number}%`
-    color?: string
-    orientation?: orientationType
-    w?: CSSLength
-    h?: CSSLength
-    b?: string
-    bRadius?: string
-    id?: string
-    className?: string
-}
+import type FancyTypes from "../types/props"
 
 export var Progress = ( { progress, color, orientation,
-        w, h, b, bRadius, id, className } : ProgressTypes ) => {
+        w, h, b, bRadius, id, className } : FancyTypes ) => {
     return (
         <div id={id} className={className} 
             style={{ display: "flex", width: orientation === 'horizontal' ? w : h,

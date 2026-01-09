@@ -1,19 +1,8 @@
-import type { ReactNode, KeyboardEvent } from 'react'
-import { Activity, useState } from 'react'
-import type { sideType } from '../types/props'
+import { type KeyboardEvent, Activity, useState } from 'react'
+import type { ModalTypes } from '../types/props'
 
-interface ModalTypes {
-    children?: ReactNode
-    trigger?: ReactNode
-    close?: ReactNode
-    side?: sideType
-    b?: string
-    bRadius?: string
-    id?: string
-    className?: string
-}
-
-export var Modal = ( { children, trigger, close, side = 'bottom', id, b, bRadius, className } : ModalTypes ) => {
+export var Modal = ( { children, trigger, close, side = 'bottom',
+        id, b, bRadius, className } : ModalTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 

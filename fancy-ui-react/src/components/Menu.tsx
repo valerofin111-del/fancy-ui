@@ -1,17 +1,8 @@
-import { type ReactNode, type KeyboardEvent, useState, Activity } from "react"
-import type { ReactNodes, sideType } from "../types/props"
+import { type KeyboardEvent, useState, Activity } from "react"
+import type FancyTypes from "../types/props"
 
-interface MenuTypes {
-    trigger?: ReactNode
-    items?: ReactNodes
-    side?: sideType
-    b?: string
-    bRadius?: string
-    id?: string
-    className?: string
-}
-
-export var Menu = ({ trigger, items, side = 'bottom', b, bRadius, id, className } : MenuTypes) => {
+export var Menu = ( { trigger, items, side = 'bottom',
+        b, bRadius, id, className } : FancyTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 

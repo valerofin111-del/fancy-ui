@@ -1,15 +1,15 @@
-@use '../../../../scss/templates.scss' as t;
+@use '../../../../scss/index.scss' as i;
 
 .Pm {
     padding: 4px;
-    background-color: t.$color-separator;
+    background-color: i.$color-separator;
     margin: 2px;
     border: 2px solid gray;
 }
 
 .Bash {
     padding: 4px;
-    background-color: t.$color-separator;
+    background-color: i.$color-separator;
     width: 200px;
     border-radius: 8px;
 }
