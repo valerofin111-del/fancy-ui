@@ -1,0 +1,15 @@
+@use '../../../../scss/templates.scss' as t;
+
+.Pm {
+    padding: 4px;
+    background-color: t.$color-separator;
+    margin: 2px;
+    border: 2px solid gray;
+}
+
+.Bash {
+    padding: 4px;
+    background-color: t.$color-separator;
+    width: 200px;
+    border-radius: 8px;
+}

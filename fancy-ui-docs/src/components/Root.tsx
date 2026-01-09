@@ -52,11 +52,9 @@ var Root = () => {
                 </div>
 
                 <motion.div className={styles.Outlet} ref={coords}
-                    initial={{ opacity: 0 }} 
-                    animate={{ opacity: 1 }}
                     onMouseMove={mouseMove}
                     onMouseLeave={mouseLeave}
-                    style={{ transformStyle: 'preserve-3d' }} 
+                    style={{ transformStyle: 'preserve-3d', overflow: 'auto' }} 
                 >
                     <Outlet />
                 </motion.div>

@@ -1,4 +1,4 @@
-import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 export type ThemeType = 'WhiteTheme' | 'BlackTheme'
-var atomTheme = atom<ThemeType>('WhiteTheme')
+var atomTheme = atomWithStorage<ThemeType>('Theme' ,'WhiteTheme')
 export default atomTheme

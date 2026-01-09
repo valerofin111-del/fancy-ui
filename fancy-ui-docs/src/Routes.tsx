@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider, type RouteObject } from "react-router"
 import Error from "./components/fallback/Error"
 import Root from "./components/Root"
-import Welcome from "./components/Outlet/Welcome"
+import Welcome from "./components/Outlet/Begin/Welcome/Welcome"
 import { lazy } from "react"
+var GetStarted = lazy(() => import('./components/Outlet/Begin/GetStarted/GetStarted'))
 var DivView = lazy(() => import('./components/Outlet/DivView'))
 var ModalView = lazy(() => import('./components/Outlet/ModalView'))
 
@@ -16,6 +17,10 @@ var Routes = () => {
         {
           index: true,
           element: <Welcome />
+        },
+        {
+          path: 'begin',
+          element: <GetStarted />,
         },
         {
           path: 'Div',

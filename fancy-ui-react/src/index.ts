@@ -6,6 +6,7 @@ export { Alert } from './components/Alert'
 export { Notification } from './components/Notification'
 export { Separator } from './components/Separator'
 export { Menu } from './components/Menu'
+export { Picture } from './components/Picture'
 
 // bun run build
 // bun pm pack
