@@ -1,7 +1,7 @@
-import type FancyTypes from "../types/props"
+import type { ProgressTypes } from "../types/props"
 
 export var Progress = ( { progress, color, orientation,
-        w, h, b, bRadius, id, className } : FancyTypes ) => {
+        w, h, b, bRadius, id, className } : ProgressTypes ) => {
     return (
         <div id={id} className={className} 
             style={{ display: "flex", width: orientation === 'horizontal' ? w : h,

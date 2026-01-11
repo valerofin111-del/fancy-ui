@@ -1,8 +1,10 @@
 import { type KeyboardEvent, useState, Activity } from "react"
-import type FancyTypes from "../types/props"
+import type { MenuTypes } from "../types/props"
 
-export var Menu = ( { trigger, items, side = 'bottom',
-        b, bRadius, id, className } : FancyTypes ) => {
+export var Menu = ( { trigger, items, side = 'bottom', 
+        m, mTop, mLeft, mRight, mBottom,
+        p, pTop, pLeft, pRight, pBottom,
+        b, bRadius, id, className } : MenuTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 

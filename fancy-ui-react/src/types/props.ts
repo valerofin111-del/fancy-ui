@@ -79,8 +79,35 @@ Pick<nodes, 'children'> {}
 
 export interface ModalTypes 
 extends always, colors, size, border, margin, padding,
-Pick<nodes, 'children' | 'trigger' | 'close'>, Pick<others, 'side'>  {} 
+Pick<nodes, 'children' | 'trigger' | 'close'>, Pick<others, 'side'> {} 
 
 export interface SwitchTypes
-extends always, colors, size, border, margin, padding, 
-Pick<nodes, 'triggers' | 'contents' | 'close' | 'children'>, Pick<others, 'side' >  {}
+extends always, colors, size, border, margin, box, padding, 
+Pick<nodes, 'triggers' | 'contents' | 'close' | 'children'>, Pick<others, 'side' > {}
+
+export interface AlertTypes
+extends always, colors, size, border, margin, padding, box,
+Pick<nodes, 'trigger' | 'action' | 'close' | 'children'>, 
+Pick<others, 'bgOpacity'> {}
+
+export interface NotificationTypes 
+extends always, colors, size, border, margin, padding, box,
+Pick<nodes, 'trigger' | 'action' | 'close' | 'children'>, 
+Pick<others, 'bgOpacity' | 'time'> {}
+
+export interface PictureTypes
+extends always, colors, size, border, margin, padding, box,
+Pick<others, 'alt' | 'src'> {}
+
+export interface ProgressTypes
+extends always, colors, size, border,
+Pick<others, 'progress' | 'orientation'> {}
+
+export interface SeparatorTypes
+extends always, colors, size, border, margin,
+Pick<others, 'orientation'> {}
+
+export interface MenuTypes
+extends always, border, margin, padding,
+Pick<nodes, 'trigger' | 'items'>,
+Pick<others, 'side'> {}

@@ -1,9 +1,9 @@
 import React from "react"
-import type FancyTypes from "../types/props"
+import type { PictureTypes } from "../types/props"
 
 export var Picture = React.memo(( { src, alt, color, m, mTop, mLeft, mRight, mBottom, 
         p, pTop, pLeft, pRight, pBottom,
-        gap, w, h, b, bRadius, id, className } : FancyTypes ) => {
+        gap, w, h, b, bRadius, id, className } : PictureTypes ) => {
             
     return (
         <img src={src} alt={alt} id={id} className={className} style={{ margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,

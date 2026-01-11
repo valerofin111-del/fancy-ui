@@ -1,11 +1,12 @@
 import React, { type KeyboardEvent, useState } from "react"
 import { createPortal } from "react-dom"
-import type FancyTypes from "../types/props"
+import type { AlertTypes } from "../types/props"
+
 
 export var Alert = React.memo(( { children, trigger, action, color, b, bRadius,
         close, direction = 'column' , bgOpacity = 0.5,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom, 
-        gap, w, h, id, className } : FancyTypes ) => {
+        gap, w, h, id, className } : AlertTypes ) => {
     
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
