@@ -17,7 +17,7 @@ var Welcome = () => {
                 <Link className={styles.Button} to={'/Div'}> Components </Link>
             </Div>
             <Div justify={'center'} mTop={'48px'}>
-                Build your apps more easy with fancy-ui
+                Build your apps easier with fancy-ui
             </Div>
         </>
     )

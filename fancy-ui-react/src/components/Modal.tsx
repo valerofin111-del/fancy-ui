@@ -2,7 +2,9 @@ import { type KeyboardEvent, Activity, useState } from 'react'
 import type { ModalTypes } from '../types/props'
 
 export var Modal = ( { children, trigger, close, side = 'bottom',
-        id, b, bRadius, className } : ModalTypes ) => {
+        m, mTop, mLeft, mRight, mBottom, 
+        p, pTop, pLeft, pRight, pBottom,
+        id, b, bRadius, className, bgColor, color } : ModalTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
@@ -36,7 +38,7 @@ export var Modal = ( { children, trigger, close, side = 'bottom',
     }
 
     return (
-        <div id={id} className={className} tabIndex={0}
+        <div tabIndex={0}
             style={{display: 'flex', flexDirection: direction }}
         >
             <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})} 
@@ -46,8 +48,12 @@ export var Modal = ( { children, trigger, close, side = 'bottom',
             </div>
 
             <Activity mode={ isOpen ? 'visible' : 'hidden' } >
-                <div style={{ border: b, borderRadius: bRadius }}>
-                    { children } 
+                <div style={{ border: b, borderRadius: bRadius, 
+                        margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
+                        padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
+                        backgroundColor: bgColor, color: color }}
+                >
+                    { <div id={id} className={className} > { children } </div> } 
                     { close && (
                         <div tabIndex={0} role='button' onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})}
                             onClick={() => setIsOpen(prev => !prev)} 

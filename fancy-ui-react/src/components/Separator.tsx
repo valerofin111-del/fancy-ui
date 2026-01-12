@@ -8,8 +8,8 @@ export var Separator = React.memo(( { orientation = 'horizontal', w, h, color,
         <div id={id} className={className} 
             style={{ backgroundColor: color, 
                 border: b, borderRadius: bRadius,
-                width: orientation === 'horizontal' ? length : w,
-                height: orientation === 'horizontal' ? w : length,
+                width: orientation === 'horizontal' ? h : w,
+                height: orientation === 'horizontal' ? w : h,
                 margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom }} />
     )
 })

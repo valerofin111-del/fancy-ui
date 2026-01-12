@@ -6,7 +6,7 @@ import type { AlertTypes } from "../types/props"
 export var Alert = React.memo(( { children, trigger, action, color, b, bRadius,
         close, direction = 'column' , bgOpacity = 0.5,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom, 
-        gap, w, h, id, className } : AlertTypes ) => {
+        gap, w, h, id, className, bgColor } : AlertTypes ) => {
     
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
@@ -31,11 +31,11 @@ export var Alert = React.memo(( { children, trigger, action, color, b, bRadius,
                         top: '0', left: '0', width: '100%', height: '100%', backgroundColor: `rgba(0, 0, 0, ${bgOpacity})`}}
                 >
                     <div id={id} className={className} onClick={(e) => e.stopPropagation()}
-                        style={{ display: 'flex', zIndex: '999', backgroundColor: color,
+                        style={{ display: 'flex', zIndex: '999', backgroundColor: bgColor, color: color,
                             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
                             gap: gap, width: w, height: h, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
                             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
-                            border: b, borderRadius: bRadius }} 
+                            border: b, borderRadius: bRadius, }} 
                     >
                         { children }
 

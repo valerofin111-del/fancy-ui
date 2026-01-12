@@ -3,7 +3,7 @@ import { createPortal } from "react-dom"
 import type { NotificationTypes } from "../types/props"
 
 export var Notification = React.memo(( { children, trigger, close, action, time = 1000,
-        direction = 'row', color, b, bRadius, bgOpacity = 0,
+        direction = 'row', b, bRadius, bgOpacity = 0, bgColor, color,
         m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
         gap, w, h, id, className } : NotificationTypes ) => {
 
@@ -41,7 +41,7 @@ export var Notification = React.memo(( { children, trigger, close, action, time 
                         backgroundColor: `rgba(0, 0, 0, ${bgOpacity})` }} 
                 >
                     <div id={id} className={className}
-                        style={{ display: 'flex', zIndex: '999', backgroundColor: color,
+                        style={{ display: 'flex', zIndex: '999', color: color, backgroundColor: bgColor,
                             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
                             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
                             gap: gap, width: w, height: h, position: 'relative', pointerEvents: 'auto',

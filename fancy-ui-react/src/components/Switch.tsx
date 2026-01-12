@@ -1,7 +1,8 @@
 import { type KeyboardEvent, Activity, useState } from "react"
 import type { SwitchTypes } from "../types/props"
 
-export var Switch = ( { children, triggers, contents, close, 
+export var Switch = ( { children, triggers, contents, close, bgColor, color,
+        m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
         side, b, bRadius, id, className } : SwitchTypes ) => {
 
     var [ content, setContent ] = useState<string | undefined>(undefined)
@@ -56,8 +57,13 @@ export var Switch = ( { children, triggers, contents, close,
     }
 
     return (
-        <div id={id} className={className} style={{ display: 'flex', flexDirection: direction }} >
-            <div style={{ display: 'flex', flexDirection: directionInside }} >
+        <div id={id} className={className} style={{ display: 'flex', flexDirection: direction,
+                margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
+                padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
+                backgroundColor: bgColor, color: color }} 
+        >
+            <div style={{ display: 'flex', flexDirection: directionInside }} 
+            >
                 {
                     triggers && Object.keys(triggers).map(key => (
                         <div onKeyDown={(e) => EnterOrSpace(e, () => {setContent(key)})} 
@@ -88,7 +94,8 @@ export var Switch = ( { children, triggers, contents, close,
                             )
                         }
                     </div>
-                ) }
+                    ) 
+                }
             </div>
         </div>
     )

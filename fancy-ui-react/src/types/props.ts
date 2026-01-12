@@ -22,6 +22,8 @@ type colors = {
 type size = {
     w?: CSSLength
     h?: CSSLength
+    maxW?: CSSLength //
+    maxH?: CSSLength //
 }
 
 type border = {
@@ -53,6 +55,11 @@ type box = {
     gap?: CSSLength
 }
 
+type overflow = {
+    overflowX?: boolean //
+    overflowY?: boolean //
+}
+
 type nodes = {
     children?: ReactNode
     contents?: ReactNodes
@@ -71,21 +78,22 @@ type others = {
     time?: number
     src?: string
     alt?: string
+    to?: string
 }
 
-export interface DivTypes 
+export interface DivTypes
 extends always, colors, size, border, margin, padding, box,
 Pick<nodes, 'children'> {}
 
 export interface ModalTypes 
 extends always, colors, size, border, margin, padding,
-Pick<nodes, 'children' | 'trigger' | 'close'>, Pick<others, 'side'> {} 
+Pick<nodes, 'children' | 'trigger' | 'close'>, Pick<others, 'side'> {}
 
-export interface SwitchTypes
+export interface SwitchTypes 
 extends always, colors, size, border, margin, box, padding, 
-Pick<nodes, 'triggers' | 'contents' | 'close' | 'children'>, Pick<others, 'side' > {}
+Pick<nodes, 'triggers' | 'contents' | 'close' | 'children'>, Pick<others, 'side'> {}
 
-export interface AlertTypes
+export interface AlertTypes 
 extends always, colors, size, border, margin, padding, box,
 Pick<nodes, 'trigger' | 'action' | 'close' | 'children'>, 
 Pick<others, 'bgOpacity'> {}
@@ -95,19 +103,21 @@ extends always, colors, size, border, margin, padding, box,
 Pick<nodes, 'trigger' | 'action' | 'close' | 'children'>, 
 Pick<others, 'bgOpacity' | 'time'> {}
 
-export interface PictureTypes
-extends always, colors, size, border, margin, padding, box,
+export interface PictureTypes 
+extends always, 
+Pick<colors, 'bgColor'>, 
+size, border, margin, padding, box,
 Pick<others, 'alt' | 'src'> {}
 
-export interface ProgressTypes
-extends always, colors, size, border,
+export interface ProgressTypes 
+extends always, colors, size, border, margin,
 Pick<others, 'progress' | 'orientation'> {}
 
-export interface SeparatorTypes
+export interface SeparatorTypes 
 extends always, colors, size, border, margin,
 Pick<others, 'orientation'> {}
 
-export interface MenuTypes
-extends always, border, margin, padding,
+export interface MenuTypes 
+extends always, colors, border, margin, padding,
 Pick<nodes, 'trigger' | 'items'>,
 Pick<others, 'side'> {}

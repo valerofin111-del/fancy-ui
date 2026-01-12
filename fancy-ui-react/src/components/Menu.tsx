@@ -1,7 +1,7 @@
 import { type KeyboardEvent, useState, Activity } from "react"
 import type { MenuTypes } from "../types/props"
 
-export var Menu = ( { trigger, items, side = 'bottom', 
+export var Menu = ( { trigger, items, side = 'bottom', bgColor, color,
         m, mTop, mLeft, mRight, mBottom,
         p, pTop, pLeft, pRight, pBottom,
         b, bRadius, id, className } : MenuTypes ) => {
@@ -17,24 +17,24 @@ export var Menu = ( { trigger, items, side = 'bottom',
     
     type directionType = 'column-reverse' | 'row-reverse' | 'row' | 'column'
 
-    var direction: directionType = 'column'
+    var direction: directionType = 'column';
 
     switch (side) {
         case 'top':
-            var direction : directionType = 'column-reverse'
-            break
+            direction = 'column-reverse';
+            break;
         case 'left':
-            var direction: directionType = 'row-reverse'
-            break
+            direction = 'row-reverse';
+            break;
         case 'right':
-            var direction: directionType = 'row'
-            break
+            direction = 'row';
+            break;
         case 'bottom':
-            var direction: directionType = 'column'
-            break
+            direction = 'column';
+            break;
         default:
-            var direction: directionType = 'column'
-            break
+            direction = 'column';
+            break;
     }
 
     return (
@@ -46,18 +46,22 @@ export var Menu = ( { trigger, items, side = 'bottom',
             </div>
 
             <Activity mode={ isOpen ? 'visible' : 'hidden' }>
-                <div style={{ display: 'flex', flexDirection: direction, border: b, borderRadius: bRadius }} >
-                {
-                    items && Object.keys(items).map(key => (
-                        <div onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})} 
-                            onClick={() => setIsOpen(prev => !prev)}
-                            style={{ cursor: 'pointer' }}
-                            key={key} tabIndex={0} role="button"
-                        > 
-                            {items![key]} 
-                        </div>
-                    ))
-                }
+                <div style={{ display: 'flex', flexDirection: direction, border: b, borderRadius: bRadius, 
+                        margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
+                        padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
+                        backgroundColor: bgColor, color: color }} 
+                >
+                    {
+                        items && Object.keys(items).map(key => (
+                            <div onKeyDown={(e) => EnterOrSpace(e, () => {setIsOpen(prev => !prev)})} 
+                                onClick={() => setIsOpen(prev => !prev)}
+                                style={{ cursor: 'pointer' }}
+                                key={key} tabIndex={0} role="button"
+                            > 
+                                {items![key]} 
+                            </div>
+                        ))
+                    }
                 </div>
             </Activity>
         </ div>
