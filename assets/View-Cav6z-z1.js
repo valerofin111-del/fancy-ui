@@ -1,0 +1,1 @@
+import{a as i,D as t,L as e}from"./index-CSUoq6p0.js";var d=({title:s,children:p,nextPage:x,nextPageUrl:r})=>i.jsxs(t,{pTop:"24px",pRight:"24px",pLeft:"24px",pBottom:"24px",children:[i.jsx("div",{children:s}),i.jsx("div",{children:p}),i.jsx("div",{children:i.jsxs(e,{to:r,children:[" ",x," "]})})]});export{d as V};
