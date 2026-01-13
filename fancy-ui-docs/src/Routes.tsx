@@ -34,7 +34,7 @@ var Routes = () => {
     }
   ] as const satisfies RouteObject[]
 
-  var router = createBrowserRouter(routes)
+  var router = createBrowserRouter(routes, { basename: '/fancy-ui' })
 
   return (
     <RouterProvider router={router} />

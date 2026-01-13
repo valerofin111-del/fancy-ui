@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
-import styles from './View.module.scss'
+// import styles from './View.module.scss'
 import { Link } from 'react-router'
-import { Div } from 'fancy-ui-react'
+import { Div } from '@valerofin111/fancy-ui-react'
 
 interface ViewTypes {
     title: ReactNode

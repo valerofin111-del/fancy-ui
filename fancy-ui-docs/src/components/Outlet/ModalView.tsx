@@ -2,7 +2,7 @@ import View from './View/View'
 
 var ModalView = () => {
     return (
-        <View>
+        <View nextPage='Switch' nextPageUrl='/Switch' title='Modal' >
             Modal
         </View>
     )

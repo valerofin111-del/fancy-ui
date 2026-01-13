@@ -10,6 +10,9 @@ export var Div = React.memo(( { children, justify, align, direction, wrap,
             justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap,
             margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
             padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
-            gap: gap, width: w, height: h, border: b, borderRadius: bRadius }} > { children } </div>
+            gap: gap, width: w, height: h, border: b, borderRadius: bRadius }} 
+        >
+            { children }
+        </div>
     )
 })

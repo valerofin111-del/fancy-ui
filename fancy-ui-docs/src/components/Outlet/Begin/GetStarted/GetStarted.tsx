@@ -1,4 +1,4 @@
-import { Div, Switch } from 'fancy-ui-react'
+import { Div, Switch } from '@valerofin111/fancy-ui-react'
 import styles from './GetStarted.module.scss'
 
 var GetStarted = () => {
@@ -17,12 +17,12 @@ var GetStarted = () => {
                                         2: <p className={styles.Pm} >npm</p>, 
                                         3: <p className={styles.Pm}>yarn</p>, 
                                         4: <p className={styles.Pm}>pnpm</p> }} 
-                            contents={{ 1: <p className={styles.Bash}>bun add fancy-ui</p>,
-                                        2: <p className={styles.Bash}>npm install fancy-ui</p>, 
-                                        3: <p className={styles.Bash}>yarn add fancy-ui</p>, 
-                                        4: <p className={styles.Bash}> pnpm add fancy-ui </p> }}  
+                            contents={{ 1: <p className={styles.Bash}>bun add @valerofin111/fancy-ui-react</p>,
+                                        2: <p className={styles.Bash}>npm install @valerofin111/fancy-ui-react</p>, 
+                                        3: <p className={styles.Bash}>yarn add @valerofin111/fancy-ui-react</p>, 
+                                        4: <p className={styles.Bash}> pnpm add @valerofin111/fancy-ui-react</p> }}  
                         >
-                            <p className={styles.Bash}>bun add fancy-ui</p>
+                            <p className={styles.Bash}>bun add @valerofin111/fancy-ui-react</p>
                         </Switch>
                     </li>
 

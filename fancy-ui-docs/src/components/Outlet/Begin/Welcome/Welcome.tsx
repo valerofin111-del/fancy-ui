@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import fancyUiLogo from '../.././../../assets/fancy-ui-logo.png'
-import { Div, Picture } from 'fancy-ui-react'
+import { Div, Picture } from '@valerofin111/fancy-ui-react'
 import styles from './Welcome.module.scss'
 
 var Welcome = () => {

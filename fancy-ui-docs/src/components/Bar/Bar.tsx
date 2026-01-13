@@ -1,4 +1,4 @@
-import { Div, Picture } from "fancy-ui-react"
+import { Div, Picture } from "@valerofin111/fancy-ui-react"
 import { useAtom } from "jotai"
 import type { ThemeType } from "../../atoms/atomTheme"
 import atomTheme from "../../atoms/atomTheme"

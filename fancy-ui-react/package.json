@@ -1,5 +1,5 @@
 {
-  "name": "fancy-ui-react",
+  "name": "@valerofin111/fancy-ui-react",
   "version": "0.1.0",
   "author": "valerofin111",
   "type": "module",
@@ -16,7 +16,6 @@
   },
   "files": [
     "dist",
-    "README.md",
     "LICENSE"
   ],
   "publishConfig": {
