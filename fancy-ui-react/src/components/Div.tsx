@@ -1,10 +1,17 @@
 import React from 'react'
 import type { DivTypes } from '../types/props'
 
-export var Div = React.memo(( { children, justify, align, direction, wrap,
+export var Div = React.memo(( { 
+        children, 
+        justify, align, direction, wrap,
         m, mTop, mLeft, mRight, mBottom, 
         p, pTop, pLeft, pRight, pBottom,
-        gap, w, h, b, bRadius, id, className } : DivTypes ) => {
+        gap, 
+        w, h, 
+        b, bRadius, 
+        id, className 
+} : DivTypes ) => {
+
     return (
         <div id={id} className={className} style={{ display: "flex", 
             justifyContent: justify, alignItems: align, flexDirection: direction, flexWrap: wrap,

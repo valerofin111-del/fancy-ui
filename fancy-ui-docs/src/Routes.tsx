@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, type RouteObject } from "react-router"
+import { createBrowserRouter, RouterProvider, type RouteObject } from "react-router-dom"
 import Error from "./components/fallback/Error"
 import Root from "./components/Root"
 import Welcome from "./components/Outlet/Begin/Welcome/Welcome"
@@ -8,7 +8,7 @@ var DivView = lazy(() => import('./components/Outlet/DivView'))
 var ModalView = lazy(() => import('./components/Outlet/ModalView'))
 
 var Routes = () => {
-  var routes = [
+  var routes : RouteObject[] = [
     {
       path: '/',
       element: <Root />,
@@ -32,9 +32,9 @@ var Routes = () => {
         }
       ]
     }
-  ] as const satisfies RouteObject[]
+  ]
 
-  var router = createBrowserRouter(routes, { basename: '/fancy-ui' })
+    var router = createBrowserRouter(routes);
 
   return (
     <RouterProvider router={router} />

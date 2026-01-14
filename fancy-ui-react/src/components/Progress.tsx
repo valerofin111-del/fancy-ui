@@ -1,8 +1,14 @@
 import type { ProgressTypes } from "../types/props"
 
-export var Progress = ( { progress, color, orientation,
+export var Progress = ( { 
+        progress, orientation,
+        color,
         m, mTop, mLeft, mRight, mBottom,
-        w, h, b, bRadius, id, className } : ProgressTypes ) => {
+        w, h, 
+        b, bRadius, 
+        id, className 
+} : ProgressTypes ) => {
+    
     return (
         <div id={id} className={className} 
             style={{ display: "flex", width: orientation === 'horizontal' ? w : h,

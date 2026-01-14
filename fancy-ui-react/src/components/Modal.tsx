@@ -1,10 +1,15 @@
 import { type KeyboardEvent, Activity, useState } from 'react'
 import type { ModalTypes } from '../types/props'
 
-export var Modal = ( { children, trigger, close, side = 'bottom',
+export var Modal = ( { 
+        children, trigger, close, 
+        side = 'bottom',
         m, mTop, mLeft, mRight, mBottom, 
         p, pTop, pLeft, pRight, pBottom,
-        id, b, bRadius, className, bgColor, color } : ModalTypes ) => {
+        b, bRadius,
+        id, className,
+        bgColor, color 
+} : ModalTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 

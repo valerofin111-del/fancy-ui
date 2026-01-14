@@ -1,5 +1,5 @@
 import { Modal } from '@valerofin111/fancy-ui-react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
  
 var Nav = () => {
     return (

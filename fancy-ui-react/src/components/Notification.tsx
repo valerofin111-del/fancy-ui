@@ -2,10 +2,17 @@ import React, { type KeyboardEvent, useState } from "react"
 import { createPortal } from "react-dom"
 import type { NotificationTypes } from "../types/props"
 
-export var Notification = React.memo(( { children, trigger, close, action, time = 1000,
-        direction = 'row', b, bRadius, bgOpacity = 0, bgColor, color,
-        m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
-        gap, w, h, id, className } : NotificationTypes ) => {
+export var Notification = React.memo(( { 
+        children, trigger, close, action, 
+        time = 1000, bgOpacity = 0,
+        direction = 'row', gap,
+        b, bRadius, 
+        bgColor, color,
+        m, mTop, mLeft, mRight, mBottom, 
+        p, pTop, pLeft, pRight, pBottom,
+        w, h,
+        id, className 
+} : NotificationTypes ) => {
 
         var [ isOpen, setIsOpen ] = useState<boolean>(false)
 

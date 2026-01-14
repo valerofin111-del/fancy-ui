@@ -1,8 +1,14 @@
 import React from "react"
 import type { SeparatorTypes } from "../types/props"
 
-export var Separator = React.memo(( { orientation = 'horizontal', w, h, color,
-        m, mTop, mLeft, mRight, mBottom, b, bRadius, id, className } : SeparatorTypes ) => {
+export var Separator = React.memo(( { 
+        orientation = 'horizontal', 
+        w, h, 
+        color,
+        m, mTop, mLeft, mRight, mBottom, 
+        b, bRadius, 
+        id, className 
+} : SeparatorTypes ) => {
 
     return (
         <div id={id} className={className} 

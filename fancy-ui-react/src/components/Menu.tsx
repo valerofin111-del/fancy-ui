@@ -1,10 +1,16 @@
 import { type KeyboardEvent, useState, Activity } from "react"
 import type { MenuTypes } from "../types/props"
 
-export var Menu = ( { trigger, items, side = 'bottom', bgColor, color,
+export var Menu = ( { 
+        trigger, items, 
+        side = 'bottom', 
+        bgColor, color,
         m, mTop, mLeft, mRight, mBottom,
-        p, pTop, pLeft, pRight, pBottom,
-        b, bRadius, id, className } : MenuTypes ) => {
+        p, pTop, pLeft, pRight, pBottom,    
+        b, bRadius,
+        h, w,
+        id, className 
+} : MenuTypes ) => {
 
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
@@ -49,7 +55,7 @@ export var Menu = ( { trigger, items, side = 'bottom', bgColor, color,
                 <div style={{ display: 'flex', flexDirection: direction, border: b, borderRadius: bRadius, 
                         margin: m, marginTop: mTop, marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom,
                         padding: p, paddingTop: pTop, paddingLeft: pLeft, paddingRight: pRight, paddingBottom: pBottom,
-                        backgroundColor: bgColor, color: color }} 
+                        backgroundColor: bgColor, color: color, height: h, width: w }} 
                 >
                     {
                         items && Object.keys(items).map(key => (

@@ -1,9 +1,15 @@
 import { type KeyboardEvent, Activity, useState } from "react"
 import type { SwitchTypes } from "../types/props"
 
-export var Switch = ( { children, triggers, contents, close, bgColor, color,
-        m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom,
-        side, b, bRadius, id, className } : SwitchTypes ) => {
+export var Switch = ( { 
+        children, triggers, contents, close, 
+        bgColor, color,
+        m, mTop, mLeft, mRight, mBottom, 
+        p, pTop, pLeft, pRight, pBottom,
+        side, 
+        b, bRadius, 
+        id, className 
+} : SwitchTypes ) => {
 
     var [ content, setContent ] = useState<string | undefined>(undefined)
 

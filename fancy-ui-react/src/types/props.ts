@@ -22,8 +22,8 @@ type colors = {
 type size = {
     w?: CSSLength
     h?: CSSLength
-    maxW?: CSSLength //
-    maxH?: CSSLength //
+    // maxW?: CSSLength
+    // maxH?: CSSLength
 }
 
 type border = {
@@ -55,10 +55,10 @@ type box = {
     gap?: CSSLength
 }
 
-type overflow = {
-    overflowX?: boolean //
-    overflowY?: boolean //
-}
+// type overflow = {
+//     overflowX?: boolean
+//     overflowY?: boolean
+// }
 
 type nodes = {
     children?: ReactNode
@@ -83,41 +83,57 @@ type others = {
 
 export interface DivTypes
 extends always, colors, size, border, margin, padding, box,
-Pick<nodes, 'children'> {}
+Pick<nodes, 'children'> 
+{}
+
+export interface HoverTypes
+extends always, colors, size, border, margin, padding,
+Pick<nodes, 'children' | 'trigger'>, 
+Pick<others, 'side'>
+{}
 
 export interface ModalTypes 
 extends always, colors, size, border, margin, padding,
-Pick<nodes, 'children' | 'trigger' | 'close'>, Pick<others, 'side'> {}
+Pick<nodes, 'children' | 'trigger' | 'close'>, Pick<others, 'side'> 
+{}
 
 export interface SwitchTypes 
 extends always, colors, size, border, margin, box, padding, 
-Pick<nodes, 'triggers' | 'contents' | 'close' | 'children'>, Pick<others, 'side'> {}
+Pick<nodes, 'triggers' | 'contents' | 'close' | 'children'>, Pick<others, 'side'>
+{}
 
 export interface AlertTypes 
 extends always, colors, size, border, margin, padding, box,
 Pick<nodes, 'trigger' | 'action' | 'close' | 'children'>, 
-Pick<others, 'bgOpacity'> {}
+Pick<others, 'bgOpacity'> 
+{}
 
 export interface NotificationTypes 
-extends always, colors, size, border, margin, padding, box,
+extends always, colors, size, border, margin, padding,
+Pick<box, 'gap' | 'direction'>,
 Pick<nodes, 'trigger' | 'action' | 'close' | 'children'>, 
-Pick<others, 'bgOpacity' | 'time'> {}
+Pick<others, 'bgOpacity' | 'time'> 
+{}
 
 export interface PictureTypes 
 extends always, 
-Pick<colors, 'bgColor'>, 
 size, border, margin, padding, box,
-Pick<others, 'alt' | 'src'> {}
+Pick<colors, 'bgColor'>,
+Pick<others, 'alt' | 'src'> 
+{}
 
 export interface ProgressTypes 
 extends always, colors, size, border, margin,
-Pick<others, 'progress' | 'orientation'> {}
+Pick<others, 'progress' | 'orientation'> 
+{}
 
 export interface SeparatorTypes 
 extends always, colors, size, border, margin,
-Pick<others, 'orientation'> {}
+Pick<others, 'orientation'> 
+{}
 
 export interface MenuTypes 
-extends always, colors, border, margin, padding,
+extends always, colors, size, border, margin, padding,
 Pick<nodes, 'trigger' | 'items'>,
-Pick<others, 'side'> {}
+Pick<others, 'side'> 
+{}

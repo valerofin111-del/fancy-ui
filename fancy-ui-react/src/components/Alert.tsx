@@ -3,10 +3,17 @@ import { createPortal } from "react-dom"
 import type { AlertTypes } from "../types/props"
 
 
-export var Alert = React.memo(( { children, trigger, action, color, b, bRadius,
-        close, direction = 'column' , bgOpacity = 0.5,
-        m, mTop, mLeft, mRight, mBottom, p, pTop, pLeft, pRight, pBottom, 
-        gap, w, h, id, className, bgColor } : AlertTypes ) => {
+export var Alert = React.memo(( { 
+        children, trigger, action, close, 
+        color, bgColor,
+        b, bRadius,
+        direction = 'column', gap, 
+        bgOpacity = 0.5,
+        m, mTop, mLeft, mRight, mBottom, 
+        p, pTop, pLeft, pRight, pBottom, 
+        w, h, 
+        id, className 
+} : AlertTypes ) => {
     
     var [ isOpen, setIsOpen ] = useState<boolean>(false)
 
